@@ -83,7 +83,7 @@ $(function() {
             row.append("td").append('span')
                 .classed({'project-key': true, 'aui-label': false})
                 .append("a")
-                .attr('href', function(item) {return projectBaseUrl + '/people/' + item.accountId})
+                .attr('href', function(item) {return baseUrl + '/people/' + item.lead.accountId})
                 // set the content of the element to be some text
                 .text(function(item) { return item.lead.key; });    
         }
