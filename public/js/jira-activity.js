@@ -74,7 +74,7 @@ $(function() {
                 .append("a")
                 // make the name a link to the project
                 .attr('href', function(item) { return projectBaseUrl + item.key; })
-                // since we're in the iframe, we need to set _top
+                // since we're in the iframe, we need to set _top (stops link from having iframe)
                 .attr('target', "_top")
                 .text(function(item) { return item.name; });
 
@@ -85,6 +85,7 @@ $(function() {
                 .append("a")
                 .attr('href', function(item) {return baseUrl + '/people/' + item.lead.accountId})
                 // set the content of the element to be some text
+                .attr('target', "_top") //stop link from having iframe
                 .text(function(item) { return item.lead.key; });    
         }
     });
