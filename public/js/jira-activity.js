@@ -81,7 +81,9 @@ $(function() {
 
             // Add a td for the project lead
             row.append("td").append('span')
-                .classed({'project-key': true, 'aui-label': true})
+                .classed({'project-key': true, 'aui-label': false})
+                .append("a")
+                .attr('href', function(item) {return projectBaseUrl + '/people/' + item.accountId})
                 // set the content of the element to be some text
                 .text(function(item) { return item.lead.key; });    
         }
